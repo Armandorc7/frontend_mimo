@@ -1,0 +1,20 @@
+{
+  "build": "passed",
+  "typescript": "strict; passed",
+  "lint": "passed; 0 warnings",
+  "unit_tests": {
+    "passed": 19,
+    "failed": 0
+  },
+  "authenticated_aws_tests": "blocked: login HTTP 500",
+  "github_writes": false,
+  "aws_configuration_changes": false,
+  "business_data_mutations": false,
+  "zip_sha256": "5594aa819759b90257055c27f2b5791d0c7b855ec90bb9358b021503c6c19565",
+  "bundle_files": [
+    "index.html",
+    "favicon.svg",
+    "assets/index-DMAXME6T.css",
+    "assets/index-U8NVpqIJ.js"
+  ]
+}

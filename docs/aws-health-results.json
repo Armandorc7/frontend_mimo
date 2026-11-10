@@ -1,0 +1,142 @@
+{
+  "checked_at": "2026-11-10T05:08:18Z",
+  "checks": [
+    {
+      "service": "usuarios",
+      "path": "/usuarios/me",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*"
+    },
+    {
+      "service": "empleados",
+      "path": "/empleados",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*"
+    },
+    {
+      "service": "nominas",
+      "path": "/nominas/planillas",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*"
+    },
+    {
+      "service": "asistencia",
+      "path": "/marcaciones",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*"
+    },
+    {
+      "service": "reclutamiento",
+      "path": "/vacantes",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*"
+    },
+    {
+      "service": "desempeno",
+      "path": "/evaluaciones?empleado=emp-000001",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*"
+    },
+    {
+      "service": "notificaciones",
+      "path": "/notificaciones",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*"
+    },
+    {
+      "service": "usuarios",
+      "path": "/usuarios/me",
+      "method": "OPTIONS",
+      "status": 200,
+      "cors": "*"
+    },
+    {
+      "service": "empleados",
+      "path": "/empleados",
+      "method": "OPTIONS",
+      "status": 200,
+      "cors": "*"
+    },
+    {
+      "service": "nominas",
+      "path": "/nominas/planillas",
+      "method": "OPTIONS",
+      "status": 200,
+      "cors": "*"
+    },
+    {
+      "service": "asistencia",
+      "path": "/marcaciones",
+      "method": "OPTIONS",
+      "status": 200,
+      "cors": "*"
+    },
+    {
+      "service": "reclutamiento",
+      "path": "/vacantes",
+      "method": "OPTIONS",
+      "status": 200,
+      "cors": "*"
+    },
+    {
+      "service": "desempeno",
+      "path": "/evaluaciones?empleado=emp-000001",
+      "method": "OPTIONS",
+      "status": 200,
+      "cors": "*"
+    },
+    {
+      "service": "notificaciones",
+      "path": "/notificaciones",
+      "method": "OPTIONS",
+      "status": 200,
+      "cors": "*"
+    },
+    {
+      "service": "usuarios",
+      "path": "/ping",
+      "method": "GET",
+      "status": 500,
+      "body": "{\"message\": \"Internal server error\"}",
+      "cors": "*"
+    },
+    {
+      "service": "empleados",
+      "path": "/ping",
+      "method": "GET",
+      "status": 500,
+      "body": "{\"message\": \"Internal server error\"}",
+      "cors": "*"
+    },
+    {
+      "service": "asistencia",
+      "path": "/ping",
+      "method": "GET",
+      "status": 500,
+      "body": "{\"message\": \"Internal server error\"}",
+      "cors": "*"
+    },
+    {
+      "service": "notificaciones",
+      "path": "/ping",
+      "method": "GET",
+      "status": 500,
+      "body": "{\"message\": \"Internal server error\"}",
+      "cors": "*"
+    }
+  ]
+}
