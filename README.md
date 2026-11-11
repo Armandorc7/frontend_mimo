@@ -1,79 +1,193 @@
-# Mimo · Personas primero
+<div align="center">
 
-Frontend local original de HCM, construido con React, TypeScript, React Router y Vite. Integra las siete APIs AWS existentes del proyecto de referencia. No tiene modo demo, repositorio remoto, datos de negocio incluidos ni autenticación simulada.
+# mimo.
+### Personas primero.
 
-## Estado de entrega
+Un espacio para conectar personas, acompañar su talento y gestionar el trabajo.
 
-La compilación de producción y las 19 pruebas unitarias del cliente pasan. **El backend actual bloquea el uso autenticado: `/auth/login` devuelve HTTP 500**, tanto con correo/contraseña como incluyendo tenant, y `/ping` también devuelve 500 en cuatro servicios. Confirmado por HTTP y desde el navegador el 10 de noviembre de 2026 (Lima). No es posible certificar los recorridos autenticados ni las escrituras reales hasta que el equipo backend restablezca AWS. Ver `docs/VERIFICACION.md`.
+**Frontend HCM · Grupo 2 · UTEC**
 
-## Ejecutar
+![React](https://img.shields.io/badge/React-19-16634B?style=flat-square)
+![TypeScript](https://img.shields.io/badge/TypeScript-7-3178C6?style=flat-square)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square)
+![AWS](https://img.shields.io/badge/Backend-AWS-FF9900?style=flat-square)
 
-Requiere Node >= 22.18 (verificado con Node 24.16) y npm.
+[Comenzar](#inicio-rápido) · [Módulos](#módulos) · [Pruebas](#pruebas-y-estado-de-integración) · [Despliegue](#despliegue) · [Documentación](#documentación)
 
-```sh
+</div>
+
+---
+
+## Conoce Mimo
+
+Mimo es la interfaz de un sistema **Human Capital Management** para administrar empleados, nóminas, asistencia, contratación y desempeño. Reúne los módulos en una experiencia responsive, con navegación por rol y un espacio de trabajo asociado a la empresa del usuario.
+
+El frontend consume siete APIs del [proyecto backend](https://github.com/MikoIOS/ProyectoFinalCloud). La aplicación utiliza las cuentas y los datos del backend; no incorpora credenciales ni un acceso que omita la autenticación.
+
+> [!IMPORTANT]
+> **Estado de verificación · 10 de noviembre de 2026**
+>
+> La compilación y las 19 pruebas unitarias pasan. En la última verificación, el login real devolvió **HTTP 500** con cuatro cuentas de prueba. Las operaciones autenticadas de extremo a extremo siguen pendientes de validación cuando se restablezca el acceso al backend.
+
+## Módulos
+
+Las siguientes funcionalidades están implementadas en la interfaz contra los contratos disponibles. Su implementación no equivale a una certificación de funcionamiento en AWS.
+
+| Área | Funcionalidades |
+| --- | --- |
+| **Inicio** | Resumen del equipo, distribución por área, nómina del mes e información personal según el rol. |
+| **Personas** | Alta, ficha, edición, cambios de estado, cese, filtros y paginación. |
+| **Organización** | Consulta de la estructura por área o jefe directo. |
+| **Usuarios y perfil** | Gestión de cuentas, roles, datos de contacto y cambio de contraseña. |
+| **Nóminas** | Boletas, PDF, planillas, generación y recálculo asíncrono, conceptos y liquidaciones. |
+| **Bandas salariales** | Consulta, alta y actualización. |
+| **Asistencia y ausencias** | Entrada y salida, registro manual, reportes CSV, solicitudes, resolución y saldo. |
+| **Reclutamiento** | Vacantes, postulaciones, carga de CV mediante URL firmada y etapas de contratación. |
+| **Onboarding** | Creación, consulta y finalización de tareas de incorporación. |
+| **Desempeño** | Evaluaciones, objetivos, competencias, puntajes y reconocimientos. |
+| **Notificaciones** | Consulta, filtros y marcado de lectura. |
+
+### Roles y empresas
+
+La navegación contempla **Administración RR. HH., Gerencia, Reclutamiento y Empleado**. Cada sesión identifica la empresa del usuario mediante `tenant_id`.
+
+Los controles visuales se complementan con la autorización del servidor: **el backend debe validar los permisos y el aislamiento entre empresas**. Las restricciones conocidas están documentadas en [Limitaciones del backend](docs/LIMITACIONES_BACKEND.md).
+
+## Inicio rápido
+
+**Requisitos:** Node.js **22.18 o superior**, npm y una cuenta de aplicación proporcionada por el equipo.
+
+```bash
+git clone https://github.com/Armandorc7/frontend_mimo.git
+cd frontend_mimo
 npm ci
 npm run dev
 ```
 
-Abre la URL que imprime Vite. Si 5173 está ocupado utilizará el siguiente puerto disponible. Las cuentas son las reales del backend: no hay credenciales incorporadas ni botones para saltarse el acceso.
+Abre la dirección que muestre Vite en la terminal. Por defecto utiliza el puerto `5173`; si está ocupado, elige el siguiente disponible.
 
-```sh
+**No necesitas iniciar sesión en la consola de AWS para utilizar Mimo.** Necesitas una cuenta válida de la aplicación y que las APIs desplegadas estén operativas.
+
+### Configuración de las APIs
+
+Las URLs predeterminadas están en [src/lib/api.ts](src/lib/api.ts). Para usar otro entorno:
+
+```bash
+cp .env.example .env.local
+```
+
+Edita las variables correspondientes en `.env.local` y reinicia Vite.
+
+> [!CAUTION]
+> Las variables `VITE_*` se incluyen en el código público del navegador. Utilízalas para URLs públicas; nunca para claves AWS, contraseñas o tokens.
+
+## Cómo se conecta
+
+```mermaid
+flowchart LR
+    U["Usuario"] --> F["Mimo · React"]
+    F -->|"Login / solicitudes con token"| G["AWS API Gateway"]
+    G --> S["Microservicios del backend"]
+    S --> D["Datos y servicios AWS"]
+```
+
+El cliente centraliza las peticiones de usuarios, empleados, nóminas, asistencia, reclutamiento, desempeño y notificaciones.
+
+- **Sesión:** el token se mantiene en memoria. Recargar o cerrar la pestaña requiere volver a iniciar sesión.
+- **Expiración:** un token vencido o un HTTP 401 de una operación autenticada devuelve al acceso. No hay renovación automática porque el backend no ofrece ese endpoint.
+- **Errores:** los formularios muestran los errores del servicio. Las escrituras no se reintentan automáticamente.
+- **Fechas:** las operaciones utilizan la zona horaria `America/Lima`.
+
+## Pruebas y estado de integración
+
+| Verificación | Resultado registrado |
+| --- | --- |
+| Compilación de producción y TypeScript | Correctos |
+| Pruebas unitarias del cliente | 19 aprobadas |
+| Interfaz con respuestas demo, en el entorno local de desarrollo | 153 comprobaciones aprobadas |
+| Login real con cuatro cuentas | HTTP 500 |
+| Acceso sin token a siete rutas protegidas | HTTP 401 |
+| Preflight CORS de siete servicios | HTTP 200 |
+| Cuatro rutas de salud `/ping` | HTTP 500 |
+| CRUD autenticado, S3, PDF y eventos reales | Pendientes de verificación |
+
+La prueba demo local cubrió 12 rutas, cuatro roles y tres tamaños de pantalla, además de flujos seleccionados de formularios y sesión. **Usó respuestas controladas y no demuestra que AWS funcione.** Su ejecutor y evidencia ampliada todavía no forman parte de esta versión del repositorio.
+
+### Validar el cliente
+
+```bash
 npm test
+npm run lint
 npm run check
+npm run build
+```
+
+Las pruebas unitarias usan respuestas controladas del transporte. No modifican los datos del backend.
+
+### Consultar el backend real
+
+Proporciona `HCM_TEST_EMAIL` y `HCM_TEST_PASSWORD` mediante el entorno y ejecuta:
+
+```bash
+npm run test:live
+```
+
+El ejecutor realiza login y un subconjunto de consultas según el rol. No crea empleados, genera planillas ni modifica registros de negocio. Repite la comprobación con cuentas de distintos roles y empresas; no guardes sus contraseñas en el repositorio.
+
+Si login devuelve HTTP 500, el responsable del backend debe revisar las integraciones y los logs de AWS. Sin un token válido no se puede completar la verificación autenticada.
+
+## Despliegue
+
+El frontend genera un sitio estático en `dist/`:
+
+```bash
+npm ci
+npm test
 npm run build
 npm run preview
 ```
 
-`dist/` es el sitio estático listo para alojar. El build incluye la comprobación de TypeScript. `npm test` utiliza respuestas controladas exclusivamente en el transporte de las pruebas unitarias; no proporciona datos a la aplicación ni certifica una integración real.
+`preview` permite revisar localmente la compilación. Para alojarla en **AWS Amplify Hosting**:
 
-## Módulos
+1. Despliega el contenido de `dist/` o utiliza [amplify.yml](amplify.yml) para configurar la compilación.
+2. Configura las [reglas de reescritura SPA](docs/amplify-rewrites.json) para permitir la recarga de rutas internas.
+3. Revisa los encabezados de [customHttp.yml](customHttp.yml), especialmente los destinos de API y S3.
+4. Comprueba desde el dominio publicado el login, CORS, las rutas internas, las descargas y los permisos por rol.
 
-- Inicio: resumen de empleados, distribución por área, nómina del mes, saldo personal y notificaciones recibidas.
-- Personas: alta, detalle, edición, estado/cese, filtros por área/estado, búsqueda dentro de la página y paginación del servicio.
-- Organización: consulta por área o jefe, grupos y paginación.
-- Usuarios: alta, consulta, detalle, edición de nombre/rol/estado; protección de la propia cuenta.
-- Perfil: datos personales, edición de contacto y cambio de contraseña real.
-- Nóminas: boletas, detalle, PDF, historial, planillas, generación/recalculo asíncrono, conceptos, liquidación.
-- Bandas salariales: consulta, alta y actualización.
-- Asistencia: entrada/salida, registro manual RR. HH., filtros, resumen diario, CSV, solicitudes, pendientes, resolución y saldo.
-- Reclutamiento: vacantes, postulaciones con datos reales, carga de PDF mediante URL firmada y cambios de etapa/contratación.
-- Onboarding: consulta, creación y finalización de tareas.
-- Desempeño: evaluaciones, competencias, objetivos, puntaje, comentarios y reconocimientos.
-- Notificaciones: filtros y marcar como leída.
+Publicar el sitio no corrige un error del backend. La entrega funcional requiere validar ambos componentes juntos.
 
-Los roles controlan navegación y acciones. La seguridad de autorización y separación de tenants depende del backend; se explican brechas existentes en `docs/LIMITACIONES_BACKEND.md`.
+## Estructura del proyecto
 
-## Configuración
+```text
+src/
+├── components/ui.tsx   # Formularios, tablas, diálogos y controles compartidos
+├── features/           # Pantallas de cada dominio HCM
+├── lib/                # Cliente API, sesión, tipos y formatos
+├── App.tsx             # Acceso, navegación, rutas y controles por rol
+├── App.css             # Estilos de la aplicación
+└── index.css           # Estilos generales
+tests/                  # Pruebas unitarias y consultas reales
+docs/                   # Contratos, verificación y limitaciones
+amplify.yml             # Configuración de compilación para Amplify
+customHttp.yml          # Encabezados de seguridad
+```
 
-Las URLs AWS públicas están en `src/lib/api.ts`. Copia `.env.example` a `.env.local` solo si necesitas reemplazarlas. Nunca guardes claves AWS, contraseñas o tokens en variables VITE: son públicas en el bundle.
+## Documentación
 
-El token se mantiene en memoria. Recargar o cerrar la pestaña exige iniciar sesión nuevamente. Un HTTP 401 o el vencimiento del token cierra la sesión. No hay renovación de sesión porque el backend no ofrece refresh tokens. Los errores de contraseña actual no cierran la sesión.
+| Recurso | Contenido |
+| --- | --- |
+| [Contratos de API](docs/CONTRATOS.md) | Operaciones y contratos utilizados por el cliente. |
+| [Verificación](docs/VERIFICACION.md) | Comprobaciones registradas y pasos de validación. |
+| [Limitaciones del backend](docs/LIMITACIONES_BACKEND.md) | Funcionalidades ausentes y restricciones que requieren trabajo del servidor. |
+| [Configuración de entorno](.env.example) | Variables públicas para las URLs de los servicios. |
+| [Backend de referencia](https://github.com/MikoIOS/ProyectoFinalCloud) | Microservicios y documentación del proyecto. |
 
-Los importes son PEN salvo las bandas salariales. Fechas operativas en America/Lima. Las ausencias validan 15 días de anticipación y hasta 90 días de duración. Los formularios muestran errores del servidor; las escrituras no se reintentan automáticamente.
+---
 
-## Pruebas reales
+<div align="center">
 
-`npm run test:live` ejecuta login y lecturas usando `HCM_TEST_EMAIL` y `HCM_TEST_PASSWORD` proporcionadas en el entorno. No guardes estas variables en el repositorio ni en comandos compartidos. Ejecuta por separado con cuentas de dos empresas y con distintos roles después de que AWS vuelva a responder.
+**mimo.** · Personas primero.  
+Proyecto HCM · Grupo 2 · UTEC
 
-No se han creado, eliminado, modificado ni contratado personas; no se han generado planillas ni enviado notificaciones durante la verificación. Para probar escrituras de punta a punta se necesitan registros reales autorizados por el equipo o un ambiente de pruebas aprobado. No se elude la autenticación para presentar el sitio como funcional.
+</div>
 
-## Desplegar en Amplify
-
-No se ha publicado ni alterado AWS. Para desplegar cuando el backend esté disponible:
-
-1. Ejecuta `npm ci`, `npm test` y `npm run build`.
-2. Despliega el contenido de `dist/` en Amplify Hosting mediante el procedimiento de tu equipo. También se incluye `amplify.yml` para un build automatizado si más adelante se conecta una fuente.
-3. Configura la regla SPA incluida en `docs/amplify-rewrites.json` para que las rutas de React Router respondan con `index.html` al recargar.
-4. Aplica `customHttp.yml` como encabezados de seguridad. Si cambias de región o dominio de S3, ajusta `connect-src` para ese destino explícito.
-5. Verifica el login, las rutas profundas, las descargas y CORS desde el dominio publicado.
-
-## Estructura
-
-- `src/components/ui.tsx`: controles, formularios, tablas, diálogos accesibles y consultas con cancelación.
-- `src/lib`: cliente API, sesión, tipos y formatos.
-- `src/features`: módulos por dominio.
-- `src/App.tsx`: acceso, navegación, rutas y permisos.
-- `tests`: pruebas unitarias y ejecutor de consultas reales.
-- `docs`: inventario de contratos, verificación y limitaciones.
-
-La plantilla original está respaldada en `.mimo-original/`. Solo se modificó este proyecto local. GitHub fue utilizado exclusivamente en modo lectura.

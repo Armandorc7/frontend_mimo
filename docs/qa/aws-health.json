@@ -1,0 +1,167 @@
+{
+  "checked_at": "2026-11-10T19:14:49.603232+00:00",
+  "checks": [
+    {
+      "service": "usuarios",
+      "path": "/usuarios/me",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*",
+      "request_id": "14945333-02d4-4fbf-8673-31ddd3cee26c"
+    },
+    {
+      "service": "empleados",
+      "path": "/empleados",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*",
+      "request_id": "a4a15453-d8f3-4d26-9aaa-bfc87fee0a4c"
+    },
+    {
+      "service": "nominas",
+      "path": "/nominas/planillas",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*",
+      "request_id": "132d01af-a282-4b9c-b0e0-e454d809e8dc"
+    },
+    {
+      "service": "asistencia",
+      "path": "/marcaciones",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*",
+      "request_id": "81302771-1144-4fc8-8702-13ad90fa1c87"
+    },
+    {
+      "service": "reclutamiento",
+      "path": "/vacantes",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*",
+      "request_id": "110be371-b25b-4ba7-a3ad-c26f7405be6c"
+    },
+    {
+      "service": "desempeno",
+      "path": "/evaluaciones?empleado=emp-000001",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*",
+      "request_id": "c5a8cd89-dea4-4d7d-929f-7e560bb8cc81"
+    },
+    {
+      "service": "notificaciones",
+      "path": "/notificaciones",
+      "method": "GET",
+      "status": 401,
+      "body": "{\"message\":\"Unauthorized\"}",
+      "cors": "*",
+      "request_id": "0d0c3272-c60d-479c-911b-a626ab0540a7"
+    },
+    {
+      "service": "usuarios",
+      "path": "/usuarios/me",
+      "method": "OPTIONS",
+      "status": 200,
+      "body": "",
+      "cors": "*",
+      "request_id": "48531b84-29ef-4be3-80b2-c4d00a8d50ea"
+    },
+    {
+      "service": "empleados",
+      "path": "/empleados",
+      "method": "OPTIONS",
+      "status": 200,
+      "body": "",
+      "cors": "*",
+      "request_id": "a56679f9-fa67-421e-9b8d-df35c3a7e85c"
+    },
+    {
+      "service": "nominas",
+      "path": "/nominas/planillas",
+      "method": "OPTIONS",
+      "status": 200,
+      "body": "",
+      "cors": "*",
+      "request_id": "8e9557ae-bf90-4ab7-8a08-adcdccab414f"
+    },
+    {
+      "service": "asistencia",
+      "path": "/marcaciones",
+      "method": "OPTIONS",
+      "status": 200,
+      "body": "",
+      "cors": "*",
+      "request_id": "13db2101-cd07-4b0d-b0d4-82eaa4fb8711"
+    },
+    {
+      "service": "reclutamiento",
+      "path": "/vacantes",
+      "method": "OPTIONS",
+      "status": 200,
+      "body": "",
+      "cors": "*",
+      "request_id": "8d1a85c0-2138-4088-b7e9-98df56f400f8"
+    },
+    {
+      "service": "desempeno",
+      "path": "/evaluaciones?empleado=emp-000001",
+      "method": "OPTIONS",
+      "status": 200,
+      "body": "",
+      "cors": "*",
+      "request_id": "27a5d80f-2439-4ec3-8157-ef05113f744b"
+    },
+    {
+      "service": "notificaciones",
+      "path": "/notificaciones",
+      "method": "OPTIONS",
+      "status": 200,
+      "body": "",
+      "cors": "*",
+      "request_id": "a21a4689-4321-4230-a4bf-64e9a77d3ca6"
+    },
+    {
+      "service": "usuarios",
+      "path": "/ping",
+      "method": "GET",
+      "status": 500,
+      "body": "{\"message\": \"Internal server error\"}",
+      "cors": "*",
+      "request_id": "8f425ee4-4cf0-42c8-a57e-82f2ac0aeae0"
+    },
+    {
+      "service": "empleados",
+      "path": "/ping",
+      "method": "GET",
+      "status": 500,
+      "body": "{\"message\": \"Internal server error\"}",
+      "cors": "*",
+      "request_id": "46a64a94-73fe-469c-8e68-414d00a0f080"
+    },
+    {
+      "service": "asistencia",
+      "path": "/ping",
+      "method": "GET",
+      "status": 500,
+      "body": "{\"message\": \"Internal server error\"}",
+      "cors": "*",
+      "request_id": "6bd1b5ec-46df-47bf-8b98-93df779b882b"
+    },
+    {
+      "service": "notificaciones",
+      "path": "/ping",
+      "method": "GET",
+      "status": 500,
+      "body": "{\"message\": \"Internal server error\"}",
+      "cors": "*",
+      "request_id": "eef0e745-8af4-47ce-9a64-5064854cbad6"
+    }
+  ]
+}

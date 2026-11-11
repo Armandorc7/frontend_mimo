@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-11-10T19:14:52Z",
+  "mode": "read-only; login is the only POST",
+  "results": [
+    {
+      "account": "Login andina admin",
+      "service": "usuarios",
+      "path": "/auth/login",
+      "status": 500,
+      "cors": "*"
+    },
+    {
+      "account": "Login pacifico admin",
+      "service": "usuarios",
+      "path": "/auth/login",
+      "status": 500,
+      "cors": "*"
+    },
+    {
+      "account": "Login andina gerente",
+      "service": "usuarios",
+      "path": "/auth/login",
+      "status": 500,
+      "cors": "*"
+    },
+    {
+      "account": "Login andina empleado",
+      "service": "usuarios",
+      "path": "/auth/login",
+      "status": 500,
+      "cors": "*"
+    }
+  ]
+}

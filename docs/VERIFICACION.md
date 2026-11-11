@@ -2,6 +2,10 @@
 
 Fecha: 10 de noviembre de 2026, America/Lima.
 
+## Actualización: demo y AWS
+
+Se ejecutó después una prueba de interfaz aislada con 153 comprobaciones aprobadas y se repitieron las conexiones reales. El login de AWS sigue devolviendo HTTP 500. Ver [informe y límites de cobertura](qa/RESULTADOS.md). La aplicación de producción sigue sin fixtures ni acceso simulado.
+
 ## Comprobaciones completadas
 
 - Compilación de producción TypeScript estricto/Vite correcta. Análisis estático Oxlint revisado.

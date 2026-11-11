@@ -1,0 +1,2259 @@
+{
+  "checked_at": "2026-11-10T19:14:33.346Z",
+  "mode": "DEMO: respuestas interceptadas, cero llamadas reales a AWS",
+  "results": [
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Usuarios y accesos"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Usuarios y accesos"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Usuarios y accesos"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "test": "Editar empleado y verificar solicitud PUT",
+      "result": "PASS"
+    },
+    {
+      "test": "Alta de empleado en memoria de prueba",
+      "result": "PASS"
+    },
+    {
+      "test": "Filtro sin resultados",
+      "result": "PASS"
+    },
+    {
+      "test": "Error 500 y recuperación",
+      "result": "PASS"
+    },
+    {
+      "test": "Navegación móvil",
+      "result": "PASS"
+    },
+    {
+      "test": "401 cierra sesión",
+      "result": "PASS"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "gerente",
+      "width": 1440,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "gerente",
+      "width": 768,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "gerente",
+      "width": 375,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "test": "Logout gerente",
+      "result": "PASS"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 1440,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 768,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "reclutador",
+      "width": 375,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "test": "Logout reclutador",
+      "result": "PASS"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 1440,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 768,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Acceso restringido"
+    },
+    {
+      "role": "empleado",
+      "width": 375,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "test": "Logout empleado",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "unmatched": [],
+  "requests": [
+    {
+      "role": "admin_rrhh",
+      "method": "POST",
+      "path": "/auth/login"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/asistencia/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/vacantes"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/asistencia/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/vacantes"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/asistencia/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/vacantes"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "PUT",
+      "path": "/empleados/demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "POST",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "gerente",
+      "method": "POST",
+      "path": "/auth/login"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/asistencia/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/asistencia/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/asistencia/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/nominas/resumen"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "gerente",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "reclutador",
+      "method": "POST",
+      "path": "/auth/login"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/vacantes"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/vacantes"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/bandas"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/vacantes"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "reclutador",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "empleado",
+      "method": "POST",
+      "path": "/auth/login"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/empleados/me"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/marcaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/evaluaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/notificaciones"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/usuarios/me"
+    },
+    {
+      "role": "empleado",
+      "method": "GET",
+      "path": "/empleados/me"
+    }
+  ]
+}
