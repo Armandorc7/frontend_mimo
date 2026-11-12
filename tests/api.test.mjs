@@ -173,3 +173,22 @@ test("role capabilities separate administration, manager, recruiter and employee
     assert.equal(recruiter(u), ["admin_rrhh", "reclutador"].includes(rol));
   }
 });
+
+test("registration sends company and RUC without authorization or tenant", async () => {
+  let received;
+  globalThis.fetch = async (url, options) => {
+    received = { url, options };
+    return Response.json({ token: "test-only" }, { status: 201 });
+  };
+  const body = {
+    empresa: "Prueba",
+    ruc: "20123456789",
+    nombre: "Persona",
+    email: "persona@example.invalid",
+    password: "unit-password",
+  };
+  await createApi()("usuarios", "/auth/register", { method: "POST", body });
+  assert.match(received.url, /\/auth\/register$/);
+  assert.deepEqual(JSON.parse(received.options.body), body);
+  assert.equal(received.options.headers.Authorization, undefined);
+});

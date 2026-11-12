@@ -25,9 +25,11 @@ Mimo es la interfaz de un sistema **Human Capital Management** para administrar 
 El frontend consume siete APIs del [proyecto backend](https://github.com/MikoIOS/ProyectoFinalCloud). La aplicación utiliza las cuentas y los datos del backend; no incorpora credenciales ni un acceso que omita la autenticación.
 
 > [!IMPORTANT]
-> **Estado de verificación · 10 de noviembre de 2026**
+> **Estado de verificación · 12 de noviembre de 2026**
 >
-> La compilación y las 19 pruebas unitarias pasan. En la última verificación, el login real devolvió **HTTP 500** con cuatro cuentas de prueba. Las operaciones autenticadas de extremo a extremo siguen pendientes de validación cuando se restablezca el acceso al backend.
+> Build, análisis de código y **20 pruebas unitarias** aprobados. **159 comprobaciones de interfaz con APIs simuladas** para cuatro roles. Consultas reales: **17/17** para Administración de Andina y **9/9** para Empleado de Pacífico, sin modificar registros de negocio. Registro de empresas con RUC integrado con `POST /auth/register`.
+>
+> **Publicado:** https://main.d2d9bbvg1i7lcp.amplifyapp.com · [Evidencia](docs/deployment-latest.json)
 
 ## Módulos
 
@@ -211,6 +213,21 @@ npm run test:demo
 
 `test:demo` requiere Google Chrome y el frontend servido en `http://127.0.0.1:5174`. Usa respuestas interceptadas exclusivamente en su navegador; no activa un modo demo en producción.
 
-El paquete `mimo-amplify-2026-11-12.zip` contiene la compilación estática. No se ha publicado esta versión en AWS. Ver [resultado y límites](docs/qa-2026-11-12/RESULTADOS.md).
+Los ZIP versionados y [el resultado previo](docs/qa-2026-11-12/RESULTADOS.md) pertenecen a la entrega anterior. El sitio publicado se compila desde el código actual de este repositorio; la evidencia vigente está en `docs/deployment-latest.json`. No se regeneraron esos ZIP históricos.
 
 Guía para el compañero que administra AWS Academy: [despliegue manual paso a paso](docs/DESPLIEGUE_LEARNER_LAB.md). El paquete para compartir es `mimo-entrega-2026-11-12.zip`; se debe extraer y subir a Amplify únicamente el ZIP interior del sitio.
+
+
+## Registro de empresas y trabajo con Git
+
+Desde **¿Tu empresa es nueva? Crear cuenta** se solicitan empresa, RUC de 11 dígitos, nombre del administrador, correo y contraseña. La API asigna la empresa y el rol; el usuario inicia sesión automáticamente. El RUC se valida por formato, sin consultar SUNAT ni verificar la propiedad del correo.
+
+Las ausencias siguen requiriendo 15 días calendario de anticipación, según la fecha de Lima. Las sesiones permanecen en memoria. El despliegue de Amplify es manual: un push no dispara una publicación automática.
+
+Antes de editar: `git pull --ff-only`. Después de verificar: commit y push a este repositorio. El backend se mantiene en `MikoIOS/ProyectoFinalCloud`; no copiar el frontend dentro de su historial Git.
+
+Para ejecutar las pruebas de interfaz con Chromium de Playwright y conservar las capturas fuera del repositorio:
+
+```sh
+PLAYWRIGHT_CHANNEL=chromium HCM_UI_URL=http://127.0.0.1:5174 HCM_QA_DIR=/tmp/mimo-qa npm run test:demo
+```

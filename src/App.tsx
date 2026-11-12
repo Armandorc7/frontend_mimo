@@ -65,6 +65,7 @@ function Login({
   onLogin: (s: Session) => void;
   expired: boolean;
 }) {
+  const [register, setRegister] = useState(false);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(
     expired ? "La sesión terminó. Ingresa nuevamente." : "",
@@ -109,8 +110,14 @@ function Login({
             <span />
             TU ESPACIO DE TRABAJO
           </span>
-          <h2>Qué bueno verte.</h2>
-          <p>Ingresa para continuar con tu equipo.</p>
+          <h2>
+            {register ? "Crea el espacio de tu empresa." : "Qué bueno verte."}
+          </h2>
+          <p>
+            {register
+              ? "Registra tu empresa y tu cuenta administradora."
+              : "Ingresa para continuar con tu equipo."}
+          </p>
           <form
             onSubmit={async (e) => {
               e.preventDefault();
@@ -121,12 +128,19 @@ function Login({
               try {
                 const result = await createApi()<Session>(
                   "usuarios",
-                  "/auth/login",
+                  register ? "/auth/register" : "/auth/login",
                   {
                     method: "POST",
                     body: {
                       email: String(form.get("email")).trim().toLowerCase(),
                       password: form.get("password"),
+                      ...(register
+                        ? {
+                            empresa: form.get("empresa"),
+                            ruc: form.get("ruc"),
+                            nombre: form.get("nombre"),
+                          }
+                        : {}),
                     },
                   },
                 );
@@ -150,6 +164,40 @@ function Login({
             }}
           >
             <fieldset disabled={busy}>
+              {register && (
+                <>
+                  <label>
+                    Nombre de la empresa
+                    <input
+                      name="empresa"
+                      autoComplete="organization"
+                      maxLength={120}
+                      required
+                    />
+                  </label>
+                  <label>
+                    RUC
+                    <input
+                      name="ruc"
+                      inputMode="numeric"
+                      pattern="[0-9]{11}"
+                      minLength={11}
+                      maxLength={11}
+                      title="Ingresa los 11 dígitos del RUC"
+                      required
+                    />
+                  </label>
+                  <label>
+                    Tu nombre
+                    <input
+                      name="nombre"
+                      autoComplete="name"
+                      maxLength={120}
+                      required
+                    />
+                  </label>
+                </>
+              )}
               <label>
                 Correo electrónico
                 <input
@@ -168,7 +216,10 @@ function Login({
                     name="password"
                     required
                     minLength={8}
-                    autoComplete="current-password"
+                    maxLength={register ? 128 : undefined}
+                    autoComplete={
+                      register ? "new-password" : "current-password"
+                    }
                     placeholder="Tu contraseña"
                   />
                   <button
@@ -185,10 +236,28 @@ function Login({
             </fieldset>
             <Notice text={error} error />
             <button className="button primary full" disabled={busy}>
-              {busy ? "Iniciando sesión…" : "Entrar a mi espacio"}
+              {busy
+                ? "Preparando tu espacio…"
+                : register
+                  ? "Crear mi empresa"
+                  : "Entrar a mi espacio"}
               <Icon name="arrow" size={18} />
             </button>
           </form>
+          <button
+            type="button"
+            className="button secondary full"
+            disabled={busy}
+            onClick={() => {
+              setRegister((value) => !value);
+              setVisible(false);
+              setError("");
+            }}
+          >
+            {register
+              ? "Ya tengo cuenta · Iniciar sesión"
+              : "¿Tu empresa es nueva? Crear cuenta"}
+          </button>
           <div className="login-security">
             <Icon name="shield" size={17} />
             <span>Tu empresa se identifica desde tu cuenta.</span>
@@ -318,7 +387,9 @@ function Shell({
         string,
         string
       >
-    )[user.tenant_id] || user.tenant_id;
+    )[user.tenant_id] ||
+    user.empresa_nombre ||
+    user.tenant_id;
   const entries = nav.filter((n) => n.allow(user));
   useEffect(() => {
     window.scrollTo(0, 0);

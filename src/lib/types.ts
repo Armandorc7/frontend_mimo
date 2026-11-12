@@ -5,6 +5,8 @@ export interface User {
   email?: string;
   rol: Role;
   tenant_id: string;
+  empresa_nombre?: string;
+  ruc?: string;
   empleado_id?: string;
   debe_cambiar_password?: boolean;
 }
