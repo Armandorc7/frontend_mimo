@@ -2,9 +2,14 @@
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
 import { writeFile, mkdir } from "node:fs/promises";
-const out = new URL("../docs/qa-2026-11-12/", import.meta.url).pathname;
+const out =
+  process.env.HCM_QA_DIR ||
+  new URL("../docs/qa-2026-11-12/", import.meta.url).pathname;
 await mkdir(out, { recursive: true });
-const browser = await chromium.launch({ channel: "chrome", headless: true });
+const browser = await chromium.launch({
+  channel: process.env.PLAYWRIGHT_CHANNEL || "chrome",
+  headless: true,
+});
 const results = [],
   errors = [],
   requests = [],
@@ -106,6 +111,22 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
     if (fault && p === "/empleados" && method === "GET") {
       status = fault;
       data = { message: "Error controlado para prueba" };
+    } else if (p === "/auth/register") {
+      const body = req.postDataJSON();
+      assert.deepEqual(Object.keys(body).sort(), [
+        "email",
+        "empresa",
+        "nombre",
+        "password",
+        "ruc",
+      ]);
+      assert.equal(body.ruc, "20123456789");
+      status = 201;
+      data = {
+        token: "demo-token-not-valid-in-aws",
+        expires_in: 3600,
+        usuario: { ...user, empresa_nombre: body.empresa, ruc: body.ruc },
+      };
     } else if (p === "/auth/login")
       data = {
         token: "demo-token-not-valid-in-aws",
@@ -220,7 +241,44 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
   const page = await context.newPage();
   page.setDefaultTimeout(10000);
   page.on("pageerror", (e) => errors.push({ role, message: e.message }));
-  await page.goto("http://127.0.0.1:5174/");
+  await page.goto(process.env.HCM_UI_URL || "http://127.0.0.1:5174/");
+  if (role === "admin_rrhh") {
+    await page
+      .getByRole("button", { name: "¿Tu empresa es nueva? Crear cuenta" })
+      .click();
+    await page
+      .getByLabel("Nombre de la empresa", { exact: true })
+      .fill("Empresa de interfaz");
+    await page.getByLabel("RUC", { exact: true }).fill("123");
+    await page.getByLabel("Tu nombre", { exact: true }).fill("Administradora");
+    await page.locator("input[name=email]").fill("registro@example.invalid");
+    await page.locator("input[name=password]").fill("prueba-registro");
+    await page
+      .getByRole("button", { name: "Crear mi empresa", exact: true })
+      .click();
+    assert.equal(
+      await page
+        .getByLabel("RUC", { exact: true })
+        .evaluate((el) => el.validity.valid),
+      false,
+    );
+    assert.equal(requests.filter((r) => r.path === "/auth/register").length, 0);
+    await page.getByLabel("RUC", { exact: true }).fill("20123456789");
+    await page
+      .getByRole("button", { name: "Crear mi empresa", exact: true })
+      .click();
+    await page.getByRole("heading", { name: "Hola, Usuario" }).waitFor();
+    await page
+      .getByText("Empresa de interfaz", { exact: true })
+      .first()
+      .waitFor();
+    await page.getByRole("button", { name: "Cerrar sesión" }).first().click();
+    results.push({
+      test: "Registro: RUC válido, cuerpo sin tenant/rol, sesión y nombre de empresa",
+      result: "PASS",
+    });
+  }
+
   await page.locator("input[name=email]").fill("demo@example.test");
   await page.locator("input[name=password]").fill("demo-password");
   await page.getByRole("button", { name: "Entrar a mi espacio" }).click();
