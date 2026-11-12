@@ -1,3 +1,5 @@
+> Actualización del 12 de noviembre de 2026: [mejoras y verificación actual](qa-2026-11-12/RESULTADOS.md). 158 comprobaciones demo aprobadas; login real sigue en HTTP 500. El contenido siguiente conserva evidencia histórica.
+
 # Verificación de Mimo local
 
 Fecha: 10 de noviembre de 2026, America/Lima.

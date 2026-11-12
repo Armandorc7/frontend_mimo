@@ -111,7 +111,7 @@ El cliente centraliza las peticiones de usuarios, empleados, nóminas, asistenci
 | Cuatro rutas de salud `/ping` | HTTP 500 |
 | CRUD autenticado, S3, PDF y eventos reales | Pendientes de verificación |
 
-La prueba demo local cubrió 12 rutas, cuatro roles y tres tamaños de pantalla, además de flujos seleccionados de formularios y sesión. **Usó respuestas controladas y no demuestra que AWS funcione.** Su ejecutor y evidencia ampliada todavía no forman parte de esta versión del repositorio.
+La prueba demo local cubrió 12 rutas, cuatro roles y tres tamaños de pantalla, además de flujos seleccionados de formularios y sesión. **Usó respuestas controladas y no demuestra que AWS funcione.** El ejecutor está en `tests/demo-ui.mjs`; la evidencia de la última mejora está en `docs/qa-2026-11-12/`.
 
 ### Validar el cliente
 
@@ -191,3 +191,26 @@ Proyecto HCM · Grupo 2 · UTEC
 
 </div>
 
+
+
+## Mejoras de uso — 12 de noviembre de 2026
+
+- Selectores de empleados por nombre, área o correo en formularios y filtros. La búsqueda se aplica a las personas cargadas; usa **Cargar más personas** para ampliar el listado. Los roles sin permiso de directorio conservan la entrada por código.
+- Desde la ficha, enlaces a nóminas, asistencia, desempeño e incorporación con la persona ya seleccionada.
+- Filtros activos y acción para limpiarlos; confirmaciones de cese, contratación y generación de planilla con sus efectos.
+- Contratos TypeScript explícitos para empleados, vacantes, evaluaciones, notificaciones y tareas de incorporación. Los editores genéricos aún utilizan un tipo flexible.
+
+Para repetir las comprobaciones:
+
+```sh
+npm run test:health
+npm run test:demo
+```
+
+`test:health` hace 18 solicitudes públicas sin credenciales ni escrituras. Guarda códigos HTTP, CORS e identificadores de solicitud en `docs/health-latest.json`; falla si alguna comprobación no cumple lo esperado. No certifica el login ni las operaciones autenticadas.
+
+`test:demo` requiere Google Chrome y el frontend servido en `http://127.0.0.1:5174`. Usa respuestas interceptadas exclusivamente en su navegador; no activa un modo demo en producción.
+
+El paquete `mimo-amplify-2026-11-12.zip` contiene la compilación estática. No se ha publicado esta versión en AWS. Ver [resultado y límites](docs/qa-2026-11-12/RESULTADOS.md).
+
+Guía para el compañero que administra AWS Academy: [despliegue manual paso a paso](docs/DESPLIEGUE_LEARNER_LAB.md). El paquete para compartir es `mimo-entrega-2026-11-12.zip`; se debe extraer y subir a Amplify únicamente el ZIP interior del sitio.

@@ -1,7 +1,14 @@
+import { Link, useSearchParams } from "react-router";
+import { EmployeePicker } from "../components/EmployeePicker";
 import { useState } from "react";
 import { useAuth } from "../lib/auth";
 import { admin, supervisor, roleLabel } from "../lib/types";
-import type { RecordData } from "../lib/types";
+import type {
+  RecordData,
+  Employee,
+  PageData,
+  OnboardingTask,
+} from "../lib/types";
 import { fullName, id, query, today } from "../lib/api";
 import {
   Badge,
@@ -40,7 +47,7 @@ const employeeFields = [
     max: 1000000,
     step: 0.01,
   }),
-  f("jefe_id", "Código del jefe", { required: false }),
+  f("jefe_id", "Jefe directo", { required: false }),
   f("telefono", "Teléfono", { required: false, maxLength: 30 }),
   f("direccion", "Dirección", { required: false }),
   f("contacto_emergencia", "Contacto de emergencia", { required: false }),
@@ -71,7 +78,7 @@ export function Employees() {
   const [message, setMessage] = useState("");
   const list = useResource(
     (s) =>
-      api(
+      api<PageData<Employee>>(
         "empleados",
         "/empleados" +
           query({ limit: 30, next_token: cursor, area, estado: status }),
@@ -82,7 +89,9 @@ export function Employees() {
   const profile = useResource(
     (s) =>
       selected
-        ? api("empleados", "/empleados/" + id(selected), { signal: s })
+        ? api<Employee>("empleados", "/empleados/" + id(selected), {
+            signal: s,
+          })
         : Promise.resolve(null),
     [api, selected],
   );
@@ -145,6 +154,31 @@ export function Employees() {
             </select>
           </label>
         </div>
+        {(area || status || search) && (
+          <div className="active-filters">
+            <span>
+              Filtros activos:{" "}
+              {[
+                area && "Área: " + area,
+                status && "Estado: " + status,
+                search && "Búsqueda: " + search,
+              ]
+                .filter(Boolean)
+                .join(" · ")}
+            </span>
+            <button
+              className="text-button"
+              onClick={() => {
+                setArea("");
+                setStatus("");
+                setSearch("");
+                setCursor("");
+              }}
+            >
+              Limpiar filtros
+            </button>
+          </div>
+        )}
         <Resource state={list} empty={!rows.length}>
           <Table
             rows={rows}
@@ -166,7 +200,7 @@ export function Employees() {
           />
         </Resource>
         <Pager
-          next={list.data?.next_token}
+          next={list.data?.next_token ?? undefined}
           cursor={cursor}
           onPage={setCursor}
           count={rows.length}
@@ -183,8 +217,32 @@ export function Employees() {
                 </div>
                 <Details
                   record={profile.data}
-                  fields={detailFields.filter(([k]) => k in profile.data)}
+                  fields={detailFields.filter(([k]) => k in profile.data!)}
                 />
+                <nav
+                  className="employee-links"
+                  aria-label="Gestión del empleado"
+                >
+                  {[
+                    ["nominas", "Nóminas"],
+                    ["asistencia", "Asistencia"],
+                    ["desempeno", "Desempeño"],
+                    ["onboarding", "Incorporación"],
+                  ].map(([path, title]) => (
+                    <Link
+                      className="button secondary"
+                      key={path}
+                      to={
+                        "/" +
+                        path +
+                        "?empleado=" +
+                        id(profile.data!.empleado_id)
+                      }
+                    >
+                      {title}
+                    </Link>
+                  ))}
+                </nav>
                 {admin(user) && profile.data.estado !== "CESADO" && (
                   <footer>
                     <button
@@ -266,7 +324,11 @@ export function Employees() {
             if (
               body.estado === "CESADO" &&
               !window.confirm(
-                "¿Confirmas el cese definitivo de " + fullName(change) + "?",
+                "¿Confirmas el cese definitivo de " +
+                  fullName(change) +
+                  " desde " +
+                  body.fecha_cese +
+                  "? Se desactivará su cuenta y se solicitará su liquidación. Esta acción no se puede revertir desde Mimo.",
               )
             )
               throw Error("Operación cancelada.");
@@ -342,12 +404,21 @@ export function Organization() {
             </select>
           </label>
           <label>
-            {mode === "area" ? "Nombre del área" : "Código del jefe"}
-            <input
-              required
-              value={draft}
-              onChange={(e) => setDraft(e.target.value)}
-            />
+            {mode === "area" ? "Nombre del área" : "Jefe directo"}
+            {mode === "area" ? (
+              <input
+                required
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+              />
+            ) : (
+              <EmployeePicker
+                label="Jefe directo"
+                value={draft}
+                onChange={setDraft}
+                required
+              />
+            )}
           </label>
           <button className="button primary">Consultar</button>
         </form>
@@ -546,7 +617,7 @@ export function Users() {
                     type: "password",
                     minLength: 8,
                   }),
-                  f("empleado_id", "Código de empleado", { required: false }),
+                  f("empleado_id", "Empleado", { required: false }),
                 ]
           }
           onClose={() => setEdit(null)}
@@ -683,14 +754,25 @@ export function Profile() {
 }
 export function Onboarding() {
   const { api, user } = useAuth();
-  const [employee, setEmployee] = useState(user.empleado_id || "");
+  const [params] = useSearchParams();
+  const [employee, setEmployee] = useState(
+    (supervisor(user) || user.rol === "reclutador"
+      ? params.get("empleado")
+      : null) ||
+      user.empleado_id ||
+      "",
+  );
   const [draft, setDraft] = useState(employee);
   const [create, setCreate] = useState(false);
   const [task, setTask] = useState<RecordData | null>(null);
   const state = useResource(
     (s) =>
       employee
-        ? api("reclutamiento", "/onboarding/" + id(employee), { signal: s })
+        ? api<OnboardingTask[]>(
+            "reclutamiento",
+            "/onboarding/" + id(employee),
+            { signal: s },
+          )
         : Promise.resolve([]),
     [api, employee],
   );
@@ -717,12 +799,8 @@ export function Onboarding() {
             }}
           >
             <label>
-              Código del empleado
-              <input
-                required
-                value={draft}
-                onChange={(e) => setDraft(e.target.value)}
-              />
+              Empleado
+              <EmployeePicker value={draft} onChange={setDraft} required />
             </label>
             <button className="button secondary">Consultar</button>
           </form>
@@ -757,7 +835,7 @@ export function Onboarding() {
           title="Nueva tarea de incorporación"
           initial={{ empleado_id: employee }}
           fields={[
-            f("empleado_id", "Código del empleado"),
+            f("empleado_id", "Empleado"),
             f("tarea", "Tarea", { type: "textarea" }),
           ]}
           onClose={() => setCreate(false)}

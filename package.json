@@ -12,7 +12,8 @@
     "test:live": "node --experimental-strip-types tests/live-api.mjs",
     "check": "tsc -b",
     "format": "prettier --write src tests README.md docs/*.md",
-    "test:demo": "node tests/demo-ui.mjs"
+    "test:demo": "node tests/demo-ui.mjs",
+    "test:health": "node --experimental-strip-types tests/health-api.mjs"
   },
   "dependencies": {
     "react": "^19.3.1",

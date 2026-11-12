@@ -1,3 +1,5 @@
+import { useSearchParams } from "react-router";
+import { EmployeePicker } from "../components/EmployeePicker";
 import { useEffect, useState } from "react";
 import { useAuth } from "../lib/auth";
 import { admin, supervisor } from "../lib/types";
@@ -24,13 +26,17 @@ import {
 export function Payroll() {
   const { api, user } = useAuth();
   const boss = supervisor(user);
+  const [params] = useSearchParams();
   const [tab, setTab] = useState("nominas");
   const [period, setPeriod] = useState(month());
-  const [employee, setEmployee] = useState(boss ? "" : user.empleado_id || "");
+  const [employee, setEmployee] = useState(
+    boss ? params.get("empleado") || "" : user.empleado_id || "",
+  );
   const [cursor, setCursor] = useState("");
   const [form, setForm] = useState("");
   const [selected, setSelected] = useState("");
   const action = useAction();
+  const [message, setMessage] = useState("");
   const path =
     tab === "liquidacion"
       ? "/nominas/liquidaciones/" + id(employee || user.empleado_id || "")
@@ -116,6 +122,7 @@ export function Payroll() {
         )}
       </Head>
       {action.notice}
+      <Notice text={message} />
       {boss && (
         <Resource state={summary}>
           {summary.data && (
@@ -175,12 +182,11 @@ export function Payroll() {
           )}
           {boss && tab !== "planillas" && (
             <label>
-              Código del empleado
-              <input
-                placeholder="Todos los empleados"
+              Empleado
+              <EmployeePicker
                 value={employee}
-                onChange={(e) => {
-                  setEmployee(e.target.value);
+                onChange={(value) => {
+                  setEmployee(value);
                   setCursor("");
                 }}
               />
@@ -430,7 +436,7 @@ export function Payroll() {
                   }),
                 ]
               : [
-                  f("empleado_id", "Código del empleado"),
+                  f("empleado_id", "Empleado"),
                   f("periodo", "Periodo", { type: "month" }),
                   f("tipo", "Tipo", { options: ["BONO", "DESCUENTO"] }),
                   f("concepto", "Concepto", { maxLength: 120 }),
@@ -449,9 +455,14 @@ export function Payroll() {
             if (
               form === "generate" &&
               !window.confirm(
-                "¿Confirmas procesar la planilla " +
+                (body.forzar
+                  ? "¿Confirmas recalcular y reemplazar las nóminas de "
+                  : "¿Confirmas generar la planilla de ") +
                   body.periodo +
-                  " de tu empresa?",
+                  " para toda tu empresa? " +
+                  (body.notificar
+                    ? "Se enviarán notificaciones a los empleados."
+                    : "No se solicitarán notificaciones a los empleados."),
               )
             )
               throw Error("Operación cancelada.");
@@ -459,6 +470,11 @@ export function Payroll() {
               "nominas",
               form === "generate" ? "/nominas/generar" : "/nominas/conceptos",
               { method: "POST", body },
+            );
+            setMessage(
+              form === "generate"
+                ? "Solicitud de planilla aceptada. Revisa el estado del periodo: el procesamiento puede continuar en segundo plano."
+                : "Concepto guardado. Se aplicará al generar o recalcular la planilla del periodo.",
             );
             setPeriod(body.periodo);
             refresh();

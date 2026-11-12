@@ -1,3 +1,5 @@
+import { useSearchParams } from "react-router";
+import { EmployeePicker } from "../components/EmployeePicker";
 import { useState } from "react";
 import { useAuth } from "../lib/auth";
 import { admin, supervisor } from "../lib/types";
@@ -23,10 +25,13 @@ import {
 export function Attendance() {
   const { api, user } = useAuth();
   const boss = supervisor(user);
+  const [params] = useSearchParams();
   const [displayDate] = useState(() => new Date());
   const [tab, setTab] = useState("marcaciones");
   const [cursor, setCursor] = useState("");
-  const [employee, setEmployee] = useState(boss ? "" : user.empleado_id || "");
+  const [employee, setEmployee] = useState(
+    boss ? params.get("empleado") || "" : user.empleado_id || "",
+  );
   const [day, setDay] = useState(today());
   const [form, setForm] = useState("");
   const [resolve, setResolve] = useState<RecordData | null>(null);
@@ -195,11 +200,10 @@ export function Attendance() {
           {boss && (
             <label>
               Empleado
-              <input
-                placeholder="Todos"
+              <EmployeePicker
                 value={employee}
-                onChange={(e) => {
-                  setEmployee(e.target.value);
+                onChange={(value) => {
+                  setEmployee(value);
                   setCursor("");
                 }}
               />
@@ -326,9 +330,7 @@ export function Attendance() {
           fields={
             form === "absence"
               ? [
-                  ...(admin(user)
-                    ? [f("empleado_id", "Código del empleado")]
-                    : []),
+                  ...(admin(user) ? [f("empleado_id", "Empleado")] : []),
                   f("tipo", "Tipo", {
                     options: [
                       "VACACIONES",
@@ -342,7 +344,7 @@ export function Attendance() {
                   f("motivo", "Motivo", { type: "textarea", maxLength: 500 }),
                 ]
               : [
-                  f("empleado_id", "Código del empleado"),
+                  f("empleado_id", "Empleado"),
                   f("tipo", "Marcación", { options: ["ENTRADA", "SALIDA"] }),
                   f("fecha", "Fecha", { type: "date", max: today() }),
                   f("hora", "Hora de Lima", { type: "time" }),

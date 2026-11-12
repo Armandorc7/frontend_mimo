@@ -1,7 +1,15 @@
+import { Link, useSearchParams } from "react-router";
+import { EmployeePicker } from "../components/EmployeePicker";
 import { useState } from "react";
 import { useAuth } from "../lib/auth";
 import { supervisor } from "../lib/types";
-import type { RecordData } from "../lib/types";
+import type {
+  RecordData,
+  Vacancy,
+  Evaluation,
+  Notification,
+  PageData,
+} from "../lib/types";
 import { dateText, id, label, month, query } from "../lib/api";
 import {
   Badge,
@@ -20,7 +28,7 @@ import {
   useResource,
 } from "../components/ui";
 export function Recruiting() {
-  const { api } = useAuth();
+  const { api, user } = useAuth();
   const [vacancy, setVacancy] = useState("");
   const [search, setSearch] = useState("");
   const [form, setForm] = useState("");
@@ -28,7 +36,7 @@ export function Recruiting() {
   const [upload, setUpload] = useState<RecordData | null>(null);
   const [message, setMessage] = useState("");
   const jobs = useResource(
-    (s) => api("reclutamiento", "/vacantes", { signal: s }),
+    (s) => api<Vacancy[]>("reclutamiento", "/vacantes", { signal: s }),
     [api],
   );
   const people = useResource(
@@ -62,6 +70,26 @@ export function Recruiting() {
         </button>
       </Head>
       <Notice text={message} />
+      {message.startsWith("Contratación enviada") && (
+        <section className="panel padded">
+          <h2>Continuar la incorporación</h2>
+          <p>
+            La contratación se está procesando. Comprueba que la persona aparezca
+            en el directorio antes de asignarle tareas. Si todavía no aparece,
+            actualiza el listado en unos momentos.
+          </p>
+          <div className="employee-links">
+            {supervisor(user) && (
+              <Link className="button secondary" to="/personas">
+                Verificar en el directorio
+              </Link>
+            )}
+            <Link className="button secondary" to="/onboarding">
+              Consultar incorporación
+            </Link>
+          </div>
+        </section>
+      )}
       <div className="recruiting-layout">
         <section className="panel jobs-panel">
           <div className="toolbar">
@@ -254,7 +282,9 @@ export function Recruiting() {
                 );
               if (
                 !window.confirm(
-                  "¿Confirmas contratar a " + candidate.nombre + "?",
+                  "¿Confirmas contratar a " +
+                    candidate.nombre +
+                    "? Se solicitará la creación de su ficha y cuenta. Verifica el resultado antes de repetir esta acción.",
                 )
               )
                 throw Error("Operación cancelada.");
@@ -363,8 +393,13 @@ function UploadCV({
 }
 export function Performance() {
   const { api, user } = useAuth();
+  const [params] = useSearchParams();
   const boss = supervisor(user);
-  const [employee, setEmployee] = useState(user.empleado_id || "");
+  const [employee, setEmployee] = useState(
+    (supervisor(user) ? params.get("empleado") : null) ||
+      user.empleado_id ||
+      "",
+  );
   const [draft, setDraft] = useState(employee);
   const [edit, setEdit] = useState<RecordData | null>(null);
   const [recognition, setRecognition] = useState(false);
@@ -372,9 +407,13 @@ export function Performance() {
   const state = useResource(
     (s) =>
       employee
-        ? api("desempeno", "/evaluaciones" + query({ empleado: employee }), {
-            signal: s,
-          })
+        ? api<Evaluation[]>(
+            "desempeno",
+            "/evaluaciones" + query({ empleado: employee }),
+            {
+              signal: s,
+            },
+          )
         : Promise.resolve([]),
     [api, employee],
   );
@@ -420,12 +459,8 @@ export function Performance() {
             }}
           >
             <label>
-              Código del empleado
-              <input
-                required
-                value={draft}
-                onChange={(e) => setDraft(e.target.value)}
-              />
+              Empleado
+              <EmployeePicker value={draft} onChange={setDraft} required />
             </label>
             <button className="button secondary">Consultar evaluaciones</button>
             <Refresh onClick={state.reload} />
@@ -491,8 +526,8 @@ export function Performance() {
           fields={[
             ...(!edit.evaluacion_id
               ? [
-                  f("empleado_id", "Código del empleado"),
-                  f("evaluador_id", "Código del evaluador"),
+                  f("empleado_id", "Empleado"),
+                  f("evaluador_id", "Evaluador"),
                   f("periodo", "Periodo"),
                 ]
               : [
@@ -544,7 +579,7 @@ export function Performance() {
           title="Reconocer a una persona"
           description="El reconocimiento se registra en el backend. El servicio actual no ofrece consulta del historial de reconocimientos."
           fields={[
-            f("para_empleado_id", "Código del destinatario"),
+            f("para_empleado_id", "Destinatario"),
             f("mensaje", "Mensaje", { type: "textarea" }),
           ]}
           onClose={() => setRecognition(false)}
@@ -566,7 +601,7 @@ export function Notifications() {
   const action = useAction();
   const state = useResource(
     (s) =>
-      api(
+      api<PageData<Notification>>(
         "notificaciones",
         "/notificaciones" + query({ limit: 200, leida: filter }),
         { signal: s },

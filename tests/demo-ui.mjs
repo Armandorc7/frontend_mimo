@@ -2,7 +2,7 @@
 import { chromium } from "playwright";
 import assert from "node:assert/strict";
 import { writeFile, mkdir } from "node:fs/promises";
-const out = new URL("../docs/qa/", import.meta.url).pathname;
+const out = new URL("../docs/qa-2026-11-12/", import.meta.url).pathname;
 await mkdir(out, { recursive: true });
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const results = [],
@@ -100,7 +100,7 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
     }
     const p = url.pathname.replace(/^\/dev/, "");
     const method = req.method();
-    requests.push({ role, method, path: p });
+    requests.push({ role, method, path: p, query: url.search });
     let data,
       status = 200;
     if (fault && p === "/empleados" && method === "GET") {
@@ -123,6 +123,20 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
       data = { ...body, empleado_id: "demo-created", estado: "ACTIVO" };
       people.push(data);
       status = 201;
+    } else if (p === "/empleados" && url.searchParams.get("limit") === "50") {
+      data = url.searchParams.get("next_token")
+        ? {
+            items: [
+              {
+                ...employee,
+                empleado_id: "demo-page-2",
+                nombres: "Segunda",
+                apellidos: "Página",
+              },
+            ],
+            next_token: null,
+          }
+        : { items: people, next_token: "page-2" };
     } else if (p === "/empleados") data = { items: people };
     else if (p.startsWith("/empleados/")) {
       const found = p.endsWith("/me")
@@ -253,10 +267,75 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
       });
     }
   }
+  if (role === "empleado") {
+    await go("/perfil");
+    const start = requests.length;
+    await go("/desempeno?empleado=otra-persona");
+    assert(
+      !requests.slice(start).some((r) => r.query.includes("otra-persona")),
+    );
+    assert(
+      requests
+        .slice(start)
+        .some(
+          (r) => r.path === "/evaluaciones" && r.query.includes("demo-emp-1"),
+        ),
+    );
+    results.push({
+      test: "Un empleado no cambia de persona mediante parámetros de URL",
+      result: "PASS",
+    });
+  }
   await page.setViewportSize({ width: 1440, height: 1000 });
   if (role === "admin_rrhh") {
     await go("/");
     await page.screenshot({ path: out + "/demo-desktop.png", fullPage: true });
+    await go("/nominas");
+    await page.getByRole("button", { name: "Cargar más personas" }).click();
+    await page
+      .getByRole("option", { name: /Segunda Página/ })
+      .waitFor({ state: "attached" });
+    await page
+      .getByRole("searchbox", { name: "Buscar empleado", exact: true })
+      .fill("Segunda");
+    await page
+      .getByRole("combobox", { name: "Empleado", exact: true })
+      .selectOption("demo-page-2");
+    await page.waitForTimeout(200);
+    assert(requests.some((r) => r.path === "/nominas/empleado/demo-page-2"));
+    results.push({
+      test: "Selector pagina, busca por nombre y envía el ID elegido",
+      result: "PASS",
+    });
+    await page.screenshot({
+      path: out + "/selector-desktop.png",
+      fullPage: true,
+    });
+    await page.setViewportSize({ width: 375, height: 812 });
+    assert.equal(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth > innerWidth + 1,
+      ),
+      false,
+    );
+    await page.waitForTimeout(400);
+    await page.screenshot({
+      path: out + "/selector-mobile.png",
+      fullPage: true,
+    });
+    await page.setViewportSize({ width: 1440, height: 1000 });
+
+    await go("/personas");
+    await page.getByRole("button", { name: "Ver ficha" }).first().click();
+    await page
+      .getByRole("link", { name: "Incorporación", exact: true })
+      .click();
+    assert(page.url().includes("empleado=demo-emp-1"));
+    await page.getByText("Revisar bienvenida demo", { exact: true }).waitFor();
+    results.push({
+      test: "Ficha enlaza a incorporación conservando el empleado",
+      result: "PASS",
+    });
     await go("/personas");
     await page.getByRole("button", { name: "Ver ficha" }).first().click();
     await page.getByRole("dialog").waitFor();
@@ -264,11 +343,19 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
       .getByRole("button", { name: "Editar ficha", exact: true })
       .click();
     await page.locator("input[name=cargo]").fill("Cargo editado en demo");
+    await page.getByRole("button", { name: "Cargar más personas" }).click();
+    await page
+      .getByRole("option", { name: /Segunda Página/ })
+      .waitFor({ state: "attached" });
+    await page
+      .getByRole("combobox", { name: "Jefe directo", exact: true })
+      .selectOption("demo-page-2");
     await page
       .getByRole("button", { name: "Guardar cambios", exact: true })
       .click();
     await page.getByText("Ficha guardada correctamente.").waitFor();
     assert.equal(people[0].cargo, "Cargo editado en demo");
+    assert.equal(people[0].jefe_id, "demo-page-2");
     results.push({
       test: "Editar empleado y verificar solicitud PUT",
       result: "PASS",
@@ -288,11 +375,55 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
       salario_base: "2000",
     }))
       await form.locator(`[name="${name}"]`).fill(value);
+    await form.locator('[name="documento"]').fill("123");
+    const beforeInvalid = requests.filter(
+      (r) => r.path === "/empleados" && r.method === "POST",
+    ).length;
+    await form
+      .getByRole("button", { name: "Guardar cambios", exact: true })
+      .click();
+    assert.equal(
+      await form
+        .locator('[name="documento"]')
+        .evaluate((e) => e.checkValidity()),
+      false,
+    );
+    assert.equal(
+      requests.filter((r) => r.path === "/empleados" && r.method === "POST")
+        .length,
+      beforeInvalid,
+    );
+    await form.locator('[name="documento"]').fill("00000002");
+    results.push({
+      test: "Documento inválido bloquea el alta antes de llamar a la API",
+      result: "PASS",
+    });
     await form
       .getByRole("button", { name: "Guardar cambios", exact: true })
       .click();
     await form.waitFor({ state: "hidden" });
     assert.equal(people.length, 2);
+    await page.getByRole("button", { name: "Ver ficha" }).last().click();
+    await page
+      .getByRole("button", { name: "Cambiar estado", exact: true })
+      .click();
+    await page.locator('select[name="estado"]').selectOption("CESADO");
+    const beforeCese = requests.filter((r) => r.method === "PATCH").length;
+    page.once("dialog", (dialog) => dialog.dismiss());
+    await page
+      .getByRole("button", { name: "Guardar cambios", exact: true })
+      .click();
+    await page.getByText("Operación cancelada.", { exact: true }).waitFor();
+    assert.equal(
+      requests.filter((r) => r.method === "PATCH").length,
+      beforeCese,
+    );
+    await page.getByRole("button", { name: "Cancelar", exact: true }).click();
+    results.push({
+      test: "Cancelar cese no envía ninguna escritura",
+      result: "PASS",
+    });
+
     results.push({
       test: "Alta de empleado en memoria de prueba",
       result: "PASS",

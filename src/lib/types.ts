@@ -15,8 +15,8 @@ export interface Session {
 }
 // Service records have heterogeneous optional fields. Keep this boundary centralized.
 export type RecordData = Record<string, any>;
-export interface PageData {
-  items: RecordData[];
+export interface PageData<T = RecordData> {
+  items: T[];
   next_token?: string | null;
 }
 export const supervisor = (u: User) =>
@@ -30,3 +30,52 @@ export const roleLabel: Record<Role, string> = {
   reclutador: "Reclutamiento",
   empleado: "Empleado",
 };
+
+// Explicit domain contracts at the API boundary; optional properties reflect legacy records.
+export interface Employee {
+  empleado_id: string;
+  nombres: string;
+  apellidos: string;
+  email: string;
+  area: string;
+  cargo: string;
+  estado: "ACTIVO" | "VACACIONES" | "CESADO";
+  documento?: string;
+  fecha_ingreso?: string;
+  salario_base?: number;
+  jefe_id?: string | null;
+  telefono?: string;
+  direccion?: string;
+  contacto_emergencia?: string;
+  fecha_cese?: string;
+}
+export interface Vacancy {
+  vacante_id: string;
+  titulo: string;
+  area: string;
+  estado: string;
+  fecha_publicacion?: string;
+}
+export interface Evaluation {
+  evaluacion_id: string;
+  empleado_id: string;
+  evaluador_id?: string;
+  periodo: string;
+  estado: string;
+  objetivos?: unknown[];
+  competencias?: unknown[];
+  puntaje?: number;
+  comentarios?: string;
+}
+export interface OnboardingTask {
+  onboarding_id: string;
+  empleado_id: string;
+  tarea: string;
+  completada: boolean;
+}
+export interface Notification {
+  notificacion_id: string;
+  mensaje: string;
+  leida: boolean;
+  created_at?: string;
+}

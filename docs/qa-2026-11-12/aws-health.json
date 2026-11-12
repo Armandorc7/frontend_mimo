@@ -1,0 +1,187 @@
+{
+  "checkedAt": "2026-11-12T19:18:32.461Z",
+  "origin": "http://127.0.0.1:5174",
+  "scope": "Reachability, unauthenticated rejection and CORS; does not certify authenticated operations",
+  "results": [
+    {
+      "service": "usuarios",
+      "path": "/usuarios/me",
+      "method": "GET",
+      "expected": 401,
+      "status": 401,
+      "cors": "*",
+      "requestId": "8c28e06f-d2ba-4292-9416-d94632f08a41",
+      "passed": true
+    },
+    {
+      "service": "usuarios",
+      "path": "/usuarios/me",
+      "method": "OPTIONS",
+      "expected": 200,
+      "status": 200,
+      "cors": "*",
+      "requestId": "3e885c7f-496a-44b6-99bf-1ee4bd2dc5e2",
+      "passed": true
+    },
+    {
+      "service": "usuarios",
+      "path": "/ping",
+      "method": "GET",
+      "expected": 200,
+      "status": 500,
+      "cors": "*",
+      "requestId": "56afca9c-5c75-44ee-bdee-3c6f8cb7cd28",
+      "passed": false
+    },
+    {
+      "service": "empleados",
+      "path": "/empleados",
+      "method": "GET",
+      "expected": 401,
+      "status": 401,
+      "cors": "*",
+      "requestId": "48183993-e871-420e-94a8-a368afcd97d2",
+      "passed": true
+    },
+    {
+      "service": "empleados",
+      "path": "/empleados",
+      "method": "OPTIONS",
+      "expected": 200,
+      "status": 200,
+      "cors": "*",
+      "requestId": "e23beef3-8625-4525-b797-fb639904aab4",
+      "passed": true
+    },
+    {
+      "service": "empleados",
+      "path": "/ping",
+      "method": "GET",
+      "expected": 200,
+      "status": 500,
+      "cors": "*",
+      "requestId": "ee43403d-f8fd-4f51-87fa-f1f2ee70afce",
+      "passed": false
+    },
+    {
+      "service": "nominas",
+      "path": "/nominas/planillas",
+      "method": "GET",
+      "expected": 401,
+      "status": 401,
+      "cors": "*",
+      "requestId": "de51d458-3df1-4e81-9679-57bd8259da7d",
+      "passed": true
+    },
+    {
+      "service": "nominas",
+      "path": "/nominas/planillas",
+      "method": "OPTIONS",
+      "expected": 200,
+      "status": 200,
+      "cors": "*",
+      "requestId": "240f97c1-0ab7-44e1-841c-51a28b05871c",
+      "passed": true
+    },
+    {
+      "service": "asistencia",
+      "path": "/marcaciones",
+      "method": "GET",
+      "expected": 401,
+      "status": 401,
+      "cors": "*",
+      "requestId": "521f6a13-0380-43bc-88ca-4b45d07c3e52",
+      "passed": true
+    },
+    {
+      "service": "asistencia",
+      "path": "/marcaciones",
+      "method": "OPTIONS",
+      "expected": 200,
+      "status": 200,
+      "cors": "*",
+      "requestId": "eba8dc0a-ee52-4b4d-b59d-3d2c30fd4fc0",
+      "passed": true
+    },
+    {
+      "service": "asistencia",
+      "path": "/ping",
+      "method": "GET",
+      "expected": 200,
+      "status": 500,
+      "cors": "*",
+      "requestId": "2e377d9c-8834-4951-9eb9-3c1b47c59eb5",
+      "passed": false
+    },
+    {
+      "service": "reclutamiento",
+      "path": "/vacantes",
+      "method": "GET",
+      "expected": 401,
+      "status": 401,
+      "cors": "*",
+      "requestId": "b930e21b-cdf7-4392-a5c2-8d0459f25bbd",
+      "passed": true
+    },
+    {
+      "service": "reclutamiento",
+      "path": "/vacantes",
+      "method": "OPTIONS",
+      "expected": 200,
+      "status": 200,
+      "cors": "*",
+      "requestId": "062e7f8c-ce7f-463f-88d9-1b2af4032a50",
+      "passed": true
+    },
+    {
+      "service": "desempeno",
+      "path": "/evaluaciones?empleado=health-check",
+      "method": "GET",
+      "expected": 401,
+      "status": 401,
+      "cors": "*",
+      "requestId": "51a5583b-74d4-45e3-8c99-cb2445f63337",
+      "passed": true
+    },
+    {
+      "service": "desempeno",
+      "path": "/evaluaciones?empleado=health-check",
+      "method": "OPTIONS",
+      "expected": 200,
+      "status": 200,
+      "cors": "*",
+      "requestId": "a050f020-322b-4e2b-b4e9-9e87af5076b9",
+      "passed": true
+    },
+    {
+      "service": "notificaciones",
+      "path": "/notificaciones",
+      "method": "GET",
+      "expected": 401,
+      "status": 401,
+      "cors": "*",
+      "requestId": "3fc15501-435a-4b15-90e2-ccec5ba0bb08",
+      "passed": true
+    },
+    {
+      "service": "notificaciones",
+      "path": "/notificaciones",
+      "method": "OPTIONS",
+      "expected": 200,
+      "status": 200,
+      "cors": "*",
+      "requestId": "93d0da47-932e-49d0-a0c2-11ebee27aac3",
+      "passed": true
+    },
+    {
+      "service": "notificaciones",
+      "path": "/ping",
+      "method": "GET",
+      "expected": 200,
+      "status": 500,
+      "cors": "*",
+      "requestId": "f7f97599-2950-40e2-bacf-ff3771284917",
+      "passed": false
+    }
+  ]
+}

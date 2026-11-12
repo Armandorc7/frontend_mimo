@@ -1,0 +1,1028 @@
+{
+  "checked_at": "2026-11-12T19:21:04.514Z",
+  "mode": "DEMO: respuestas interceptadas, cero llamadas reales a AWS",
+  "results": [
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Usuarios y accesos"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 1440,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Usuarios y accesos"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 768,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/",
+      "result": "PASS",
+      "heading": "Hola, Usuario"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/personas",
+      "result": "PASS",
+      "heading": "Personas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/organizacion",
+      "result": "PASS",
+      "heading": "Organización"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/asistencia",
+      "result": "PASS",
+      "heading": "Asistencia y ausencias"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/nominas",
+      "result": "PASS",
+      "heading": "Nóminas"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/bandas",
+      "result": "PASS",
+      "heading": "Bandas salariales"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/reclutamiento",
+      "result": "PASS",
+      "heading": "Reclutamiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/onboarding",
+      "result": "PASS",
+      "heading": "Onboarding"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/desempeno",
+      "result": "PASS",
+      "heading": "Desempeño y crecimiento"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/notificaciones",
+      "result": "PASS",
+      "heading": "Notificaciones"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/usuarios",
+      "result": "PASS",
+      "heading": "Usuarios y accesos"
+    },
+    {
+      "role": "admin_rrhh",
+      "width": 375,
+      "path": "/perfil",
+      "result": "PASS",
+      "heading": "Mi perfil"
+    },
+    {
+      "test": "Selector pagina, busca por nombre y envía el ID elegido",
+      "result": "PASS"
+    },
+    {
+      "test": "Ficha enlaza a incorporación conservando el empleado",
+      "result": "PASS"
+    },
+    {
+      "test": "Editar empleado y verificar solicitud PUT",
+      "result": "PASS"
+    },
+    {
+      "test": "Documento inválido bloquea el alta antes de llamar a la API",
+      "result": "PASS"
+    },
+    {
+      "test": "Cancelar cese no envía ninguna escritura",
+      "result": "PASS"
+    },
+    {
+      "test": "Alta de empleado en memoria de prueba",
+      "result": "PASS"
+    },
+    {
+      "test": "Filtro sin resultados",
+      "result": "PASS"
+    },
+    {
+      "test": "Error 500 y recuperación",
+      "result": "PASS"
+    },
+    {
+      "test": "Navegación móvil",
+      "result": "PASS"
+    },
+    {
+      "test": "401 cierra sesión",
+      "result": "PASS"
+    }
+  ],
+  "errors": [],
+  "unmatched": [],
+  "requests": [
+    {
+      "role": "admin_rrhh",
+      "method": "POST",
+      "path": "/auth/login",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=5"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200&leida=false"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones",
+      "query": "?limit=30&fecha=2026-11-12"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones",
+      "query": "?limit=30&fecha=2026-11-12"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/asistencia/resumen",
+      "query": "?fecha=2026-11-12"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas",
+      "query": "?periodo=2026-11&limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/bandas",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/vacantes",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/evaluaciones",
+      "query": "?empleado=demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=5"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200&leida=false"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones",
+      "query": "?limit=30&fecha=2026-11-12"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones",
+      "query": "?limit=30&fecha=2026-11-12"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/asistencia/resumen",
+      "query": "?fecha=2026-11-12"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas",
+      "query": "?periodo=2026-11&limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/bandas",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/vacantes",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/evaluaciones",
+      "query": "?empleado=demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=5"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=5"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200&leida=false"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/marcaciones",
+      "query": "?limit=30&fecha=2026-11-12"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/ausencias/saldo/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/asistencia/resumen",
+      "query": "?fecha=2026-11-12"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas",
+      "query": "?periodo=2026-11&limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas",
+      "query": "?periodo=2026-11&limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/bandas",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/vacantes",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/evaluaciones",
+      "query": "?empleado=demo-emp-1"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=5"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200&leida=false"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas",
+      "query": "?periodo=2026-11&limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50&next_token=page-2"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/empleado/demo-page-2",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/onboarding/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50&next_token=page-2"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "PUT",
+      "path": "/empleados/demo-emp-1",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=50"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "POST",
+      "path": "/empleados",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/demo-created",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/resumen",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/nominas/resumen",
+      "query": "?periodo=2026-11"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=5"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/notificaciones",
+      "query": "?limit=200&leida=false"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/usuarios/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados/me",
+      "query": ""
+    },
+    {
+      "role": "admin_rrhh",
+      "method": "GET",
+      "path": "/empleados",
+      "query": "?limit=30"
+    }
+  ]
+}

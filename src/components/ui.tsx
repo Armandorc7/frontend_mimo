@@ -1,8 +1,8 @@
 /* eslint-disable react/only-export-components -- Shared UI primitives and their typed helpers intentionally share this module. */
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import type { DependencyList, ReactNode } from "react";
-import { useAuth } from "../lib/auth";
-import { supervisor } from "../lib/types";
+import { EmployeePicker } from "./EmployeePicker";
+
 import { dateText, fullName, label } from "../lib/api";
 import type { RecordData } from "../lib/types";
 export function Icon({
@@ -263,7 +263,13 @@ export function Resource({
   empty?: boolean;
 }) {
   return state.loading ? (
-    <div className="skeleton-block" role="status" aria-label="Cargando datos">
+    <div
+      className="skeleton-block"
+      role="status"
+      aria-label="Cargando datos"
+      aria-live="polite"
+      aria-busy="true"
+    >
       <span />
       <span />
       <span />
@@ -484,39 +490,16 @@ function EmployeeInput({
   field: Field;
   initial: RecordData;
 }) {
-  const { api, user } = useAuth();
-  const listId = useId();
-  const people = useResource(
-    (s) =>
-      supervisor(user)
-        ? api("empleados", "/empleados?limit=50", { signal: s })
-        : Promise.resolve(null),
-    [api, user.rol],
-  );
+  const [value, setValue] = useState(String(initial[field.name] ?? ""));
   return (
-    <>
-      <input
-        name={field.name}
-        list={listId}
-        defaultValue={initial[field.name] ?? ""}
-        required={field.required}
-        placeholder="Selecciona una persona o escribe su código"
-        autoComplete="off"
-        readOnly={field.readOnly}
-      />
-      <datalist id={listId}>
-        {people.data?.items?.map((r: RecordData) => (
-          <option key={r.empleado_id} value={r.empleado_id}>
-            {fullName(r)} · {r.area}
-          </option>
-        ))}
-      </datalist>
-      <small>
-        {supervisor(user)
-          ? "Sugerencias: primeras 50 personas. También puedes ingresar otro código del directorio."
-          : "Ingresa el código de la ficha del empleado."}
-      </small>
-    </>
+    <EmployeePicker
+      name={field.name}
+      label={field.label}
+      value={value}
+      onChange={setValue}
+      required={field.required}
+      readOnly={field.readOnly}
+    />
   );
 }
 export function Editor({
