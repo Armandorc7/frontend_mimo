@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-13T19:24:13.838412+00:00",
+  "feature": "Paginación de bonos y descuentos",
+  "page_size": 30,
+  "backend_contract": {
+    "query": [
+      "periodo",
+      "empleado_id",
+      "limit",
+      "next_token"
+    ],
+    "response": [
+      "items",
+      "total",
+      "next_token"
+    ],
+    "total_meaning": "Registros de la página",
+    "limit_default": 200,
+    "limit_max": 200,
+    "tenant_isolation": "Token validado por tenant e índice; empleado conserva filtros y autorización"
+  },
+  "checks": {
+    "backend_unittest": 23,
+    "frontend_unit": "passed",
+    "build": "passed",
+    "lint": "passed",
+    "browser_simulated": 160,
+    "browser_errors": []
+  },
+  "deployment": "Pendiente: credenciales temporales AWS Academy vencidas; no publicado en API ni Amplify"
+}

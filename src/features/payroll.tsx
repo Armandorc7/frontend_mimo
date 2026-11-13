@@ -44,7 +44,12 @@ export function Payroll() {
         ? "/nominas/planillas" + query({ limit: 20, next_token: cursor })
         : tab === "conceptos"
           ? "/nominas/conceptos" +
-            query({ periodo: period, empleado_id: employee })
+            query({
+              periodo: period,
+              empleado_id: employee,
+              limit: 30,
+              next_token: cursor,
+            })
           : employee
             ? "/nominas/empleado/" +
               id(employee) +
@@ -324,7 +329,7 @@ export function Payroll() {
             )}
           </Resource>
         )}
-        {!["conceptos", "liquidacion"].includes(tab) && (
+        {tab !== "liquidacion" && (
           <Pager
             next={page?.next_token}
             cursor={cursor}

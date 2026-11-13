@@ -180,8 +180,23 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
           },
         ],
       };
-    else if (p === "/nominas/conceptos") data = { items: [] };
-    else if (p === "/nominas") data = { items: [payroll] };
+    else if (p === "/nominas/conceptos") {
+      const second = url.searchParams.has("next_token");
+      data = {
+        items: [
+          {
+            concepto_id: second ? "con-2" : "con-1",
+            empleado_id: employee.empleado_id,
+            tipo: second ? "DESCUENTO" : "BONO",
+            concepto: second
+              ? "Descuento segunda página"
+              : "Bono primera página",
+            monto: 100,
+          },
+        ],
+        next_token: second ? null : "concept-page-2",
+      };
+    } else if (p === "/nominas") data = { items: [payroll] };
     else if (p.startsWith("/nominas/liquidaciones/")) {
       status = 404;
       data = { message: "Sin liquidación demo" };
@@ -290,6 +305,37 @@ for (const role of ["admin_rrhh", "gerente", "reclutador", "empleado"]) {
     }, path);
     await page.waitForTimeout(180);
     await page.locator("main h1").waitFor();
+  }
+  if (role === "admin_rrhh") {
+    await go("/nominas");
+    await page
+      .getByRole("button", { name: "Bonos y descuentos", exact: true })
+      .click();
+    await page.getByText("Bono primera página", { exact: true }).waitFor();
+    await page.getByRole("button", { name: "Siguiente", exact: true }).click();
+    await page.getByText("Descuento segunda página", { exact: true }).waitFor();
+    assert.equal(
+      await page
+        .getByRole("button", { name: "Siguiente", exact: true })
+        .count(),
+      0,
+    );
+    assert.ok(
+      requests.some(
+        (r) =>
+          r.path === "/nominas/conceptos" &&
+          new URLSearchParams(r.query).get("next_token") === "concept-page-2" &&
+          new URLSearchParams(r.query).get("limit") === "30",
+      ),
+    );
+    await page
+      .getByRole("button", { name: "Primera página", exact: true })
+      .click();
+    await page.getByText("Bono primera página", { exact: true }).waitFor();
+    results.push({
+      test: "Bonos y descuentos: siguiente, última página y regreso al inicio",
+      result: "PASS",
+    });
   }
   for (const width of [1440, 768, 375]) {
     await page.setViewportSize({ width, height: 1000 });

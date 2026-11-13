@@ -231,3 +231,8 @@ Para ejecutar las pruebas de interfaz con Chromium de Playwright y conservar las
 ```sh
 PLAYWRIGHT_CHANNEL=chromium HCM_UI_URL=http://127.0.0.1:5174 HCM_QA_DIR=/tmp/mimo-qa npm run test:demo
 ```
+
+
+### Paginación de bonos y descuentos
+
+La pestaña de nómina solicita 30 conceptos por página con `limit` y `next_token`. Incluye **Siguiente** y **Primera página**; cambiar periodo o empleado reinicia la página. Requiere la actualización de `listarConceptos` en el backend. El despliegue de este cambio está pendiente por credenciales AWS vencidas; [verificación local](docs/paginacion-conceptos.json).
