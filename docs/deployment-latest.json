@@ -61,5 +61,22 @@
     "RUC validado por formato; sin consulta SUNAT ni verificación de correo",
     "Hosting manual; push no dispara redeploy automático",
     "No se ejercitaron escrituras de negocio con datos reales desde el nuevo frontend; las pruebas de escritura de UI interceptan APIs"
-  ]
+  ],
+  "latest_pagination_deployment": {
+    "verified_at": "2026-11-13T19:30:44.273927+00:00",
+    "amplify": {
+      "app_id": "d2d9bbvg1i7lcp",
+      "branch": "main",
+      "job_id": "6",
+      "url": "https://main.d2d9bbvg1i7lcp.amplifyapp.com",
+      "status": "SUCCEED"
+    },
+    "evidence": "paginacion-conceptos.json",
+    "public_artifact_sha256": {
+      "favicon.svg": "0cebb7bdfce820a2c14678b722c42ea744371fb307bb147ca27bf6e7239d6cd0",
+      "index.html": "a085403129373376fbc5fc24e572d53a32a4c31e14b008277fcc6864e6e96e0e",
+      "assets/index-CYShdvl3.js": "1a345fa3d4b98903a37741881d7c7ec1a4f54563c105e439fc836cbcd7959c6d",
+      "assets/index-Dcdba8-U.css": "4509110cb09bd416b34b0359c424eee0945eddce42d0d3f8f8b5b28bedb1cb5b"
+    }
+  }
 }
